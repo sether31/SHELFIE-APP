@@ -1,4 +1,5 @@
 import { Text, View } from 'react-native'
+import '../global.css'
 
 const Home = () => {
   return (
