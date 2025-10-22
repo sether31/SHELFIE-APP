@@ -1,14 +1,41 @@
-import { Text, View } from 'react-native'
 import { Link } from 'expo-router'
-import '../global.css'
+
+// themes
+import ThemedView from '../components/ThemedView'
+import ThemedCard from '../components/ThemedCard'
+import ThemedText from '../components/ThemedText'
+import ThemeLogo from '../components/ThemeLogo'
+import Spacer from '../components/Spacer'
 
 const Home = () => {
   return (
-    <View className="items-center justify-center flex-1">
-      <Text className="text-2xl font-bold text-blue-500">The Number 1</Text>
-      <Text className="text-xl text-blue-500">Reading List App</Text>
-      <Link href="/contact">Contact</Link>
-    </View>
+    <ThemedView className="items-center justify-center flex-1">
+      {/* card */}
+      <ThemedCard className="p-8 rounded-lg w-[300px]">
+        <ThemeLogo className="block w-full h-40 mx-auto mb-8" />
+        
+        <ThemedText
+          title={true}
+          className="text-2xl font-bold text-center"
+        >
+          The Number 1
+        </ThemedText>
+        <Spacer height={10} />
+        <ThemedText
+          className="text-lg text-center"
+        >
+          Reading List App
+        </ThemedText>
+      </ThemedCard>
+      
+      <Spacer height={50} />
+      <Link href="/about">
+        <ThemedText>About</ThemedText>
+      </Link>
+        <Link href="/contact">
+        <ThemedText>Contact</ThemedText>
+      </Link>
+    </ThemedView>
   )
 }
 

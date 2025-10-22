@@ -13,13 +13,13 @@ const Contact = () => {
         title={true}
         className="text-2xl font-bold"
       >
-        Contact Page
+        About Page
       </ThemedText>
       <Link href="/">
         <ThemedText>Home</ThemedText>
       </Link>
-      <Link href="/about">
-        <ThemedText>About</ThemedText>
+      <Link href="/contact">
+        <ThemedText>Contact</ThemedText>
       </Link>
     </ThemedView>
   )
