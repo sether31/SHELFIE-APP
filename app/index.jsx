@@ -1,3 +1,6 @@
+// css
+import '../global.css'
+
 import { Link } from 'expo-router'
 
 // themes
@@ -29,11 +32,11 @@ const Home = () => {
       </ThemedCard>
       
       <Spacer height={50} />
-      <Link href="/about">
-        <ThemedText>About</ThemedText>
+      <Link href="/login">
+        <ThemedText>Login your account</ThemedText>
       </Link>
-        <Link href="/contact">
-        <ThemedText>Contact</ThemedText>
+        <Link href="/register">
+        <ThemedText>Register your account</ThemedText>
       </Link>
     </ThemedView>
   )

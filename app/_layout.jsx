@@ -1,4 +1,3 @@
-import '../global.css'
 import { Stack } from "expo-router"
 import { useColorScheme } from "react-native"
 import { Colors } from "../constants/color";
@@ -10,20 +9,19 @@ const RootLayout = () => {
   const theme = Colors[colorScheme] ?? Colors.light;
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: theme.navBackground }}>
-      <StatusBar style="auto" />
-      <Stack 
-        screenOptions={{
-          headerStyle: { backgroundColor: theme.navBackground  },
-          headerTintColor: theme.title,
-        }}
+  <>
+    <StatusBar style="auto" />
+    <Stack 
+      screenOptions={{
+        headerStyle: { backgroundColor: theme.navBackground  },
+        headerTintColor: theme.title,
+      }}
       >
-        <Stack.Screen name="index" options={{title: 'Home'}} />
-        <Stack.Screen name="contact" options={{title: 'Contact'}} />
-      </Stack>
-    </SafeAreaView>
+        <Stack.Screen name="index" options={{name: 'Home'}} />
+        <Stack.Screen name="(auth)" options={{headerShown: false}} />
+    </Stack>
+  </>
   )
 }
 
 export default RootLayout
-
