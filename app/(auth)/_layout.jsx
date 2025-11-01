@@ -15,6 +15,7 @@ const RootLayout = () => {
         screenOptions={{
           headerStyle: { backgroundColor: theme.navBackground  },
           headerTintColor: theme.title,
+          headerTitleAlign: 'center'
         }}
       >
         <Stack.Screen name="login" options={{name: "Login"}} />

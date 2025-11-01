@@ -12,7 +12,7 @@ import Spacer from '../components/Spacer'
 
 const Home = () => {
   return (
-    <ThemedView className="items-center justify-center flex-1">
+    <ThemedView safe={true} className="items-center justify-center flex-1">
       {/* card */}
       <ThemedCard className="p-8 rounded-lg w-[300px]">
         <ThemeLogo className="block w-full h-40 mx-auto mb-8" />
@@ -33,11 +33,16 @@ const Home = () => {
       
       <Spacer height={50} />
       <Link href="/login">
-        <ThemedText>Login your account</ThemedText>
+        <ThemedText>Login Page</ThemedText>
       </Link>
-        <Link href="/register">
-        <ThemedText>Register your account</ThemedText>
+      <Link href="/register">
+        <ThemedText>Register Page</ThemedText>
       </Link>
+
+       <Link href="/profile">
+        <ThemedText>Profile Page</ThemedText>
+      </Link>
+      
     </ThemedView>
   )
 }
