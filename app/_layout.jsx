@@ -18,7 +18,7 @@ const RootLayout = () => {
         headerTitleAlign: 'center'
       }}
       >
-        <Stack.Screen name="index" options={{name: 'Home'}} />
+        <Stack.Screen name="index" options={{title: 'Home'}} />
         <Stack.Screen name="(auth)" options={{headerShown: false}} />
         <Stack.Screen name="(dashboard)" options={{headerShown: false}} />
     </Stack>
