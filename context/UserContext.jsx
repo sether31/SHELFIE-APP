@@ -1,5 +1,9 @@
 import { createContext, useReducer, useState } from 'react'
 import userReducer from '../reducers/userReducer';
+import Constants from 'expo-constants'
+
+
+const { backendUrl } = Constants.expoConfig.extra;
 
 
 const UserContext = createContext();
@@ -15,7 +19,7 @@ export function UserProvider({ children }) {
   const login = async (email, password) => {
     dispatch({type: 'LOADING'});
     try {
-      const res = await fetch('http://192.168.159.4/shelfie/auth.php', {
+      const res = await fetch(`${backendUrl}auth.php`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
@@ -46,7 +50,7 @@ export function UserProvider({ children }) {
     dispatch({type: 'LOADING'});
 
     try {
-      const res = await fetch('http://192.168.159.4/shelfie/auth.php', {
+      const res = await fetch(`${backendUrl}auth.php`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
