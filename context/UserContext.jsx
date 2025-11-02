@@ -75,7 +75,7 @@ export function UserProvider({ children }) {
   }
 
   const logout = async () => {
-    
+    dispatch({type: "LOGOUT"});
   }
 
   return (
