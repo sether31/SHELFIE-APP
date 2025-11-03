@@ -38,12 +38,7 @@ const Login = () => {
         return;
       }
       console.log("Login form submitted");
-      const result = await login(form.email, form.password);
-      if(result.success) {
-        alert(result.message || 'Login successful.');
-      } else {
-        alert(result.message || 'Wrong username or password.');
-      }
+      await login(form.email, form.password);
 
       setForm({
         email: '',
