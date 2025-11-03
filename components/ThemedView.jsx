@@ -6,7 +6,7 @@ const ThemedView = ({safe = false, ...props}) => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
 
-  if(!safe) return (
+  if(safe) return (
     <SafeAreaView
       style={[
         {backgroundColor: theme.background}

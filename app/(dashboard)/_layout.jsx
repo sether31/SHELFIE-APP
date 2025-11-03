@@ -1,29 +1,15 @@
-import { useColorScheme } from "react-native"
+import { ActivityIndicator, useColorScheme } from "react-native"
 import { Colors } from "../../constants/color";
-import { Tabs, useRouter } from "expo-router";
+import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect } from "react";
-import useUser from "../../hooks/useUser";
+import UserOnly from "../../components/auth/UserOnly";
 
 const DashboardLayout = () => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
 
-  // checker
-  const router = useRouter();
-  const { state } = useUser();
-
-  useEffect(() => {
-    if (!state.user) {
-      alert('Please login first')
-      router.replace("/login");
-    }
-  }, [state.user]);
-
-  if (!state.user) return null;
-
   return (
-  <>
+  <UserOnly>
     <Tabs 
       screenOptions={{
         headerShown: false,
@@ -80,7 +66,7 @@ const DashboardLayout = () => {
         }} 
       />
     </Tabs>
-  </>
+  </UserOnly>
   )
 }
 

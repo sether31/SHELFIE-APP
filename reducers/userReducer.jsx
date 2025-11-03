@@ -6,6 +6,7 @@ const ACTIONS = {
   REGISTER_ERROR: 'REGISTER_ERROR',
   CLEAR_ERRORS: 'CLEAR_ERRORS',
   LOGOUT: 'LOGOUT',
+  AUTH_CHECKED: 'AUTH_CHECKED'
 };
 
 
@@ -29,8 +30,11 @@ const userReducer = (state, action) => {
     case ACTIONS.CLEAR_ERRORS:
       return { ...state, loginError: null, registerError: null };
 
+    case ACTIONS.AUTH_CHECKED:
+      return { ...state, authChecked: true };
+
     case ACTIONS.LOGOUT:
-      return { user: null, loading: false, loginError: null, registerError: null };
+      return { ...state, user: null, loading: false, loginError: null, registerError: null };
 
     default:
       return state;
