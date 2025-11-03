@@ -10,7 +10,6 @@ const RootLayout = () => {
 
   return (
   <UserProvider>
-    <StatusBar style="auto" />
     <Stack 
       screenOptions={{
         headerStyle: { backgroundColor: theme.navBackground  },
